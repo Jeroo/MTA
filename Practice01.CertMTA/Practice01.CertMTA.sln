@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice01.CertMTA", "Practice01.CertMTA\Practice01.CertMTA.csproj", "{72205A67-6B2A-47E0-B991-380E4DADD25D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.CertMTA", "ConsoleApp.CertMTA\ConsoleApp.CertMTA.csproj", "{4335BE98-7244-408F-AB7D-AB8AEBCB1AE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72205A67-6B2A-47E0-B991-380E4DADD25D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72205A67-6B2A-47E0-B991-380E4DADD25D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72205A67-6B2A-47E0-B991-380E4DADD25D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72205A67-6B2A-47E0-B991-380E4DADD25D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4335BE98-7244-408F-AB7D-AB8AEBCB1AE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4335BE98-7244-408F-AB7D-AB8AEBCB1AE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4335BE98-7244-408F-AB7D-AB8AEBCB1AE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4335BE98-7244-408F-AB7D-AB8AEBCB1AE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {83BAAD09-6334-4237-9921-7A09CCD02AFF}
+	EndGlobalSection
+EndGlobal
