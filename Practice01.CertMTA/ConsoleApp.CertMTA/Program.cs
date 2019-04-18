@@ -10,6 +10,7 @@ namespace ConsoleApp.CertMTA
     {
 
         //Pagina en la que me quede del libro la 34
+        //Cambio en otra pc
         public static void Main(string[] args)
         {
             int x = 0;
