@@ -44,6 +44,35 @@ namespace ConsoleApp.CertMTA
             }
 
             TestIfElse(10);
+            TestSwitch(10, 20, '+');
+        }
+
+        public static void TestSwitch(int op1, int op2, char opr)
+        {
+            int result;
+
+            switch (opr)
+            {
+                case '+':
+                    result = op1 + op2;
+                    break;
+                case '-':
+                    result = op1 - op2;
+                    break;
+                case '*':
+                    result = op1 * op2;
+                    break;
+                case '/':
+                    result = op1 / op2;
+                    break;
+                default:
+                    Console.WriteLine("Operador Desconocido");
+                    return;
+            }
+
+            Console.WriteLine("Resultado: {0}", result);
+
+            return;
         }
 
         public static void TestIfElse(int n)
