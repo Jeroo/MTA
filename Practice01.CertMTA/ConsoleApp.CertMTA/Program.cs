@@ -45,6 +45,7 @@ namespace ConsoleApp.CertMTA
 
             TestIfElse(10);
             TestSwitch(10, 20, '+');
+            TestSwitchFallThrough();
         }
 
         public static void TestSwitch(int op1, int op2, char opr)
@@ -74,6 +75,27 @@ namespace ConsoleApp.CertMTA
 
             return;
         }
+
+        public static void TestSwitchFallThrough() {
+
+            DateTime dt = DateTime.Today;
+
+            switch (dt.DayOfWeek)
+            { 
+                case DayOfWeek.Monday:
+                case DayOfWeek.Tuesday:
+                case DayOfWeek.Wednesday:
+                case DayOfWeek.Thursday:
+                case DayOfWeek.Friday :
+                Console.WriteLine("Hoy es un dia laboral");
+                            break;
+                            default:
+                Console.WriteLine("Hoy es un dia de fin de semana");
+                            break;
+            }
+
+
+    }
 
         public static void TestIfElse(int n)
         {
