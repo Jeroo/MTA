@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,27 +26,172 @@ namespace ConsoleApp.CertMTA
             string resultSTR = x > 0 ? "Si": "No" ; //TODO Operador Ternario, solo existe un solo operador ternario en C#
 
             //Estructuras de decision en C# son: if, if-else y switch
-            int number1 = 10;
+            //int number1 = 10;
+            //int number2 = 20;
+
+            //if (number2 > number1)
+            //{
+            //    Console.WriteLine("number2 es mayor que number1");
+            //}
+
+            //if (number1 > 5)
+            //{
+            //    Console.WriteLine("number1 es mayor que 5");
+
+            //    if (number1 < 20)
+            //    {
+            //        Console.WriteLine("number1 es menor que 20");
+            //    }
+            //}
+
+            //TestIfElse(10);
+            //TestSwitch(10, 20, '+');
+            //TestSwitchFallThrough();
+            //WhileTest();
+            //DoWhileTest();
+            //ForTest();
+            //ForInifinity();
+            //ForEachTest();
+            //int resulfactorial = Factorial(5);
+            //Console.WriteLine(resulfactorial);
+            //ExceptionTest();
+            TryCatchFinallyTest();
+            //int n = 20;
+            //int d = n++ + 5;
+            //Console.WriteLine("Rsultado de d = {0}",d);
+
+            int numberl = 10;
             int number2 = 20;
+            if (number2 > numberl)
+                Console.WriteLine("numberl");
+            Console.WriteLine("number2");
+        }
 
-            if (number2 > number1)
+        public static void TryCatchFinallyTest()
+        {
+            StreamReader sr = null;
+
+            try
             {
-                Console.WriteLine("number2 es mayor que number1");
+                sr = File.OpenText(@"c:\data\data.txt");
+                Console.WriteLine(sr.ReadToEnd());
             }
-
-            if (number1 > 5)
+            catch (FileNotFoundException fnfe)
             {
-                Console.WriteLine("number1 es mayor que 5");
+                Console.WriteLine(fnfe.Message);
+            }
+            catch (Exception ex)
+            {
 
-                if (number1 < 20)
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if (sr != null)
                 {
-                    Console.WriteLine("number1 es menor que 20");
+                    sr.Close();
                 }
+            }    
+        }
+
+        public static void ExceptionTest()
+        {
+            /*
+             *  Un bloque try debe
+                tener, al menos,
+                un bloque catch o
+                un bloque finally
+                asociado .
+             */
+
+            StreamReader sr = null;
+            try
+            {
+                sr = File.OpenText(@"C:\data\data.txt");
+                Console.WriteLine(sr.ReadToEnd());
             }
 
-            TestIfElse(10);
-            TestSwitch(10, 20, '+');
-            TestSwitchFallThrough();
+            catch (FileNotFoundException fnfe)
+            {
+                Console.WriteLine(fnfe.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public static int Factorial(int n)
+        {
+            /*
+             * La recursión es una técnica de programación que hace que un método se llame a sí
+               mismo para computar un resultado.*
+             */
+            if (n == 0)
+            {
+                n = 1; // Caso Base
+
+                return n;
+            }
+            else
+            {
+                Console.WriteLine("El valor de n = {0}", n);
+                return n * Factorial(n - 1); // Caso Recursivo
+            }
+        }
+
+        public static void ForEachTest()
+        {
+            int[] numbers = { 1,2,3,4,5};
+
+            foreach (int i in numbers)
+            {
+                Console.WriteLine("El valor de i = {0}", i);
+
+            }
+        }
+
+        public static void ForInifinity() {
+
+            for (; ;)
+            {
+                //No hace nada
+            }
+        }
+
+        public static void ForTest()
+        {
+            /*
+            for (init-expr; cond-expr; count- expr)
+                sentencia 
+            */
+            for (int i = 1; i <= 5; i++)
+            {
+                Console.WriteLine("El valor de i = {0}",i);
+            }
+        }
+
+        public static void DoWhileTest()
+        {
+            int i = 1;
+
+            do
+            {
+                Console.WriteLine("El valor de i = {0}", i);
+                i++;
+
+            } while (i <= 5);
+        }
+
+        public static void WhileTest()
+        {
+            int i = 1;
+
+            while (i <= 5)
+            {
+                Console.WriteLine("El valor de i = {0}", i);
+                i++;
+            }
         }
 
         public static void TestSwitch(int op1, int op2, char opr)
