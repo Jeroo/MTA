@@ -60,11 +60,20 @@ namespace ConsoleApp.CertMTA
             //int d = n++ + 5;
             //Console.WriteLine("Rsultado de d = {0}",d);
 
-            int numberl = 10;
-            int number2 = 20;
-            if (number2 > numberl)
-                Console.WriteLine("numberl");
-            Console.WriteLine("number2");
+            //int numberl = 10;
+            //int number2 = 20;
+            //if (number2 > numberl)
+            //    Console.WriteLine("numberl");
+            //Console.WriteLine("number2");
+
+            Rectangle rect = new Rectangle();
+            rect.Length = 10.0;
+            rect.Width = 20.0;
+
+            double area = rect.GetArea();
+            Console.WriteLine("Área del Rectángulo: {0}",area) ;
+
+
         }
 
         public static void TryCatchFinallyTest()
@@ -266,11 +275,47 @@ namespace ConsoleApp.CertMTA
         private double length;
         private double width;
 
-        public Rectangle(double l, double w)
-        {
-            length = l;
-            width = w;
+        public double Length {
+            get {
+
+                return length;
+                    
+                    
+                  }
+            set {
+                if (value > 0.0)
+                {
+                    length = value;
+                }
+            }
+
         }
+
+        public double Width
+        {
+            get
+            {
+
+                return width;
+
+
+            }
+            set
+            {
+                if (value > 0.0)
+                {
+                    width = value;
+                }
+            }
+
+        }
+
+
+        //public Rectangle(double l, double w)
+        //{
+        //    length = l;
+        //    width = w;
+        //}
 
         public double GetArea() {
 
