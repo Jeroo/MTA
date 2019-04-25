@@ -55,7 +55,7 @@ namespace ConsoleApp.CertMTA
             //int resulfactorial = Factorial(5);
             //Console.WriteLine(resulfactorial);
             //ExceptionTest();
-            TryCatchFinallyTest();
+            // TryCatchFinallyTest();
             //int n = 20;
             //int d = n++ + 5;
             //Console.WriteLine("Rsultado de d = {0}",d);
@@ -66,14 +66,28 @@ namespace ConsoleApp.CertMTA
             //    Console.WriteLine("numberl");
             //Console.WriteLine("number2");
 
-            Rectangle rect = new Rectangle();
-            rect.Length = 10.0;
-            rect.Width = 20.0;
+            //Rectangle rect = new Rectangle();
+            //rect.Length = 10.0;
+            //rect.Width = 20.0;
 
-            double area = rect.GetArea();
-            Console.WriteLine("Área del Rectángulo: {0}",area) ;
+            //double area = rect.GetArea();
+            //Console.WriteLine("Área del Rectángulo: {0}",area) ;
 
+            RectangleHandler handler;
+            //handler += new RectangleHandler(DisplayArea);
 
+            /// handler += DisplayArea; 
+            /// 
+            //Rectangle rect = new Rectangle(10, 20);
+            //handler(rect);
+
+        }
+
+        public delegate void RectangleHandler(Rectangle rect);
+
+        public static void DisplayArea(Rectangle rect) {
+
+            Console.WriteLine(rect.GetArea());
         }
 
         public static void TryCatchFinallyTest()
