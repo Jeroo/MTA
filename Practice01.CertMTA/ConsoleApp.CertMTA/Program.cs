@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,25 @@ namespace ConsoleApp.CertMTA
 {
     public class Program
     {
+        public event EventHandler Changed;
+        private double length;
+        public double Length
+        {
+
+            get
+            {
+
+                return length;
+
+            }
+            set
+            {
+
+                length = value;
+                Changed(this, EventArgs.Empty);
+
+            }
+        }
 
         //Pagina en la que me quede del libro la 34
         //Cambio en otra pc
@@ -55,16 +75,27 @@ namespace ConsoleApp.CertMTA
             //int resulfactorial = Factorial(5);
             //Console.WriteLine(resulfactorial);
             //ExceptionTest();
-            TryCatchFinallyTest();
+            //TryCatchFinallyTest();
             //int n = 20;
             //int d = n++ + 5;
             //Console.WriteLine("Rsultado de d = {0}",d);
 
-            int numberl = 10;
-            int number2 = 20;
-            if (number2 > numberl)
-                Console.WriteLine("numberl");
-            Console.WriteLine("number2");
+            //int numberl = 10;
+            //int number2 = 20;
+            //if (number2 > numberl)
+            //    Console.WriteLine("numberl");
+            //Console.WriteLine("number2");
+
+            Rectangle r = new Rectangle();
+            r.Changed += new EventHandler(r_Changed);
+            r.Length = 10;
+        }
+
+        static void r_Changed(object sender, EventArgs e)
+        {
+            Rectangle r = (Rectangle)sender;
+            Console.WriteLine(
+             "Value Changed : Length = (0}", r.Length);
         }
 
         public static void TryCatchFinallyTest()
