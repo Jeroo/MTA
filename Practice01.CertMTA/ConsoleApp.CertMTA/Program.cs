@@ -79,6 +79,7 @@ namespace ConsoleApp.CertMTA
 
         public static List<string> reformatDate(List<string> dates)
         {
+
             for (int i = 0; i < dates.Count(); i++)
             {
                 string[] date = dates[i].Split(' ');
