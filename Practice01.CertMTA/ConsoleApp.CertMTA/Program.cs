@@ -23,7 +23,7 @@ namespace ConsoleApp.CertMTA
 
     //public interface IDistance : Distance
     //{
-        
+
     //}
 
     //public class DistanceImplementation : Distance
@@ -53,27 +53,41 @@ namespace ConsoleApp.CertMTA
     //    }
     //}
 
-    public class Program
+    class Rectangle
     {
+        public static string ShapeName { get { return "Rectángulo"; } }
         public event EventHandler Changed;
         private double length;
-        public double Length
-        {
+        public double Length {get; set; }
+        public double Width { get; set; }
+//public double Length
+//{
 
-            get
-            {
+//    get
+//    {
 
-                return length;
+//        return length;
 
-            }
-            set
-            {
+//    }
+//    set
+//    {
 
-                length = value;
-                Changed(this, EventArgs.Empty);
+//        length = value;
+//        Changed(this, EventArgs.Empty);
 
-            }
+//    }
+//}
+
+public double GetArea() {
+
+            return this.Length * this.Width;
         }
+
+    }
+
+    public class Program
+    {
+        
 
         // static string regularExpression = @"^(([a-z]{1,6})[_]?[0-9]{0,4}?)(@hackerrank.com$)";
 
@@ -153,14 +167,57 @@ namespace ConsoleApp.CertMTA
         }
         //Pagina en la que me quede del libro la 34
         //Cambio en otra pc
+
+        public struct Point {
+
+            public double X, Y;
+
+        }
+
+        static void r_Changed(object sender, EventArgs e) {
+
+            Rectangle r = (Rectangle)sender;
+            Console.WriteLine(
+                    "Value Changed : Length = {0}",
+                    r.Length);
+
+        }
         public static void Main(string[] args)
         {
-            List<int> friendsFrom = new List<int> { 1, 1,2,2,2 };
-            List<int> friendsTo = new List<int> { 2,2,3,3,4 };
-            List<int> friendsWeight = new List<int> { 1,2,1,3,3};
-            int friendsNodes = 4;
+            Point p1 = new Point();
+            p1.X = 10;
+            p1.Y = 20;
 
-            maxShared(friendsNodes, friendsFrom, friendsTo, friendsWeight);
+            Point p2 = p1;
+            p2.X = 100;
+
+            Console.WriteLine("p1.X = {0}", p1.X);
+
+            Rectangle rect1 = new Rectangle
+            { Length = 10.0, Width = 20.0 };
+
+            Rectangle rect2 = rect1;
+            rect2.Length = 100.0;
+
+            Console.WriteLine("rect1.Length = {0}", rect1.Length);
+
+            //Rectangle rect = new Rectangle
+            //{ Length = 10.0, Width = 20.0 };
+
+
+            //Console.WriteLine("Nombre de la forma: {0}, Area: {1}", Rectangle.ShapeName, rect.GetArea());
+
+            //Rectangle r = new Rectangle();
+            //r.Changed += new EventHandler(r_Changed);
+            //r.Length = 10;
+
+
+            //List<int> friendsFrom = new List<int> { 1, 1,2,2,2 };
+            //List<int> friendsTo = new List<int> { 2,2,3,3,4 };
+            //List<int> friendsWeight = new List<int> { 1,2,1,3,3};
+            //int friendsNodes = 4;
+
+            //maxShared(friendsNodes, friendsFrom, friendsTo, friendsWeight);
 
             //List<string> characterCodes = new List<string>()
             //{
