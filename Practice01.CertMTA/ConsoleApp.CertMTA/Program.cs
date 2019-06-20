@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static ConsoleApp.CertMTA.Program;
 
 namespace ConsoleApp.CertMTA
 {
@@ -53,36 +54,27 @@ namespace ConsoleApp.CertMTA
     //    }
     //}
 
-    class Rectangle
+    class Rectangle : Polygon
     {
-        public static string ShapeName { get { return "Rectángulo"; } }
-        public event EventHandler Changed;
-        private double length;
-        public double Length {get; set; }
-        public double Width { get; set; }
-//public double Length
-//{
-
-//    get
-//    {
-
-//        return length;
-
-//    }
-//    set
-//    {
-
-//        length = value;
-//        Changed(this, EventArgs.Empty);
-
-//    }
-//}
-
-public double GetArea() {
-
-            return this.Length * this.Width;
+        public Rectangle(double length, double width)
+        {
+            Length = length;
+            Width = width;
         }
 
+        public override double GetArea()
+        {
+            return Length * Width;
+        }
+    }
+
+    abstract class Polygon
+    {
+
+        public double Length { get; protected set; }
+        public double Width { get; protected set; }
+
+        abstract public double GetArea();
     }
 
     public class Program
@@ -168,6 +160,8 @@ public double GetArea() {
         //Pagina en la que me quede del libro la 34
         //Cambio en otra pc
 
+     
+
         public struct Point {
 
             public double X, Y;
@@ -184,22 +178,28 @@ public double GetArea() {
         }
         public static void Main(string[] args)
         {
-            Point p1 = new Point();
-            p1.X = 10;
-            p1.Y = 20;
 
-            Point p2 = p1;
-            p2.X = 100;
+            Rectangle rect = new Rectangle(10,20);
 
-            Console.WriteLine("p1.X = {0}", p1.X);
+            Console.WriteLine(
+                "Width = {0}, Length = {1}, Area = {2}", rect.Width, rect.Length, rect.GetArea()
+                );
+            //Point p1 = new Point();
+            //p1.X = 10;
+            //p1.Y = 20;
 
-            Rectangle rect1 = new Rectangle
-            { Length = 10.0, Width = 20.0 };
+            //Point p2 = p1;
+            //p2.X = 100;
 
-            Rectangle rect2 = rect1;
-            rect2.Length = 100.0;
+            //Console.WriteLine("p1.X = {0}", p1.X);
 
-            Console.WriteLine("rect1.Length = {0}", rect1.Length);
+            //Rectangle rect1 = new Rectangle
+            //{ Length = 10.0, Width = 20.0 };
+
+            //Rectangle rect2 = rect1;
+            //rect2.Length = 100.0;
+
+            //Console.WriteLine("rect1.Length = {0}", rect1.Length);
 
             //Rectangle rect = new Rectangle
             //{ Length = 10.0, Width = 20.0 };
