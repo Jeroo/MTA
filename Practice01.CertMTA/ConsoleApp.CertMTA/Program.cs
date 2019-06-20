@@ -431,7 +431,7 @@ namespace ConsoleApp.CertMTA
             //int resulfactorial = Factorial(5);
             //Console.WriteLine(resulfactorial);
             //ExceptionTest();
-            //TryCatchFinallyTest();
+            // TryCatchFinallyTest();
             //int n = 20;
             //int d = n++ + 5;
             //Console.WriteLine("Rsultado de d = {0}",d);
@@ -661,5 +661,60 @@ namespace ConsoleApp.CertMTA
                 Console.WriteLine("n es mayor que o igual que 30");
             }
         }
+    }
+
+
+    public class Rectangle
+    {
+        private double length;
+        private double width;
+
+        public double Length {
+            get {
+
+                return length;
+                    
+                    
+                  }
+            set {
+                if (value > 0.0)
+                {
+                    length = value;
+                }
+            }
+
+        }
+
+        public double Width
+        {
+            get
+            {
+
+                return width;
+
+
+            }
+            set
+            {
+                if (value > 0.0)
+                {
+                    width = value;
+                }
+            }
+
+        }
+
+
+        //public Rectangle(double l, double w)
+        //{
+        //    length = l;
+        //    width = w;
+        //}
+
+        public double GetArea() {
+
+            return length * width;
+        }
+
     }
 }
