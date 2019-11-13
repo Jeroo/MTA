@@ -1,0 +1,6 @@
+﻿1. El polimorfismo es la capacidad de las clases derivadas para compartir una funcionalidad en comun con las demas clases base pero definiendo su propio comportamiento.
+2. El polimorfismo permite a los objetos de la clase derivada que se les trate en tiempo de ejecucion como el objeto de la clase base. Cuando se invoca un metodo en tiempo de ejecucion, 
+su tipo exacto se identifica y se invoca el metodo apropiado desde la clase derivada.
+3. La importancia aqui es notar la palabra reservada virtual. Esta palabra permite a las clases derivadas sobrescribir el metodo.
+4. La palabra reservada override reemplaza un miembro de la clase base en una clase derivada. La palabra reservada new crea un nuevo miembro del mismo nombre en la clase derivada y oculta
+la implementacion de la clase base.

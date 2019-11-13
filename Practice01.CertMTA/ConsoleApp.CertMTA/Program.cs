@@ -81,13 +81,51 @@ namespace ConsoleApp.CertMTA
             //Rectangle rect = new Rectangle(10, 20);
             //handler(rect);
 
+            TryCatchFinallyTest();
+
+            Polygon p = new Rectangle(10, 20);
+
+
+            object o = new Rectangle(10, 20);
+
+            if (o is Rectangle)
+            {
+
+                Rectangle r = (Rectangle)o;
+            }
+
+            Rectangle r2 = o as Rectangle;
+
+            if (r2 != null)
+            {
+                // Do Something
+            }
+
+
+            //List<Polygon> polygons = new List<Polygon>();
+            //polygons.Add(new Polygon());
+            //polygons.Add(new Rectangle(10,20));
+            //polygons.Add(new Triangle());
+
+            //foreach (Polygon po in polygons)
+            //{
+            //    po.Draw();
+            //}
+
+
+            Triangle t = new Triangle();
+            t.Draw();
+
+            Polygon po = t;
+            po.Draw();
+
         }
 
         public delegate void RectangleHandler(Rectangle rect);
 
         public static void DisplayArea(Rectangle rect) {
 
-            Console.WriteLine(rect.GetArea());
+            //Console.WriteLine(rect.GetArea());
         }
 
         public static void TryCatchFinallyTest()
@@ -284,57 +322,111 @@ namespace ConsoleApp.CertMTA
     }
 
 
-    public class Rectangle
+    public class Triangle : Polygon
+    {
+        
+
+        public new void Draw()
+        {
+            Console.WriteLine("Dibijando: Triangulo");
+        }
+    }
+
+    public class Rectangle : Polygon
     {
         private double length;
         private double width;
 
-        public double Length {
-            get {
 
-                return length;
-                    
-                    
-                  }
-            set {
-                if (value > 0.0)
-                {
-                    length = value;
-                }
-            }
-
-        }
-
-        public double Width
+        public Rectangle(double length, double width)
         {
-            get
-            {
-
-                return width;
-
-
-            }
-            set
-            {
-                if (value > 0.0)
-                {
-                    width = value;
-                }
-            }
-
+            Length = length;
+            Width = width;
         }
 
+        public override void Draw()
+        {
+            Console.WriteLine("Dibijando: Rectangulo");
+        }
 
-        //public Rectangle(double l, double w)
-        //{
-        //    length = l;
-        //    width = w;
+        //public override double Length {
+        //    get {
+
+        //        return length;
+
+
+        //          }
+        //    set {
+        //        if (value > 0.0)
+        //        {
+        //            length = value;
+        //        }
+        //    }
+
         //}
 
-        public double GetArea() {
+        //public double Width
+        //{
+        //    get
+        //    {
 
-            return length * width;
+        //        return width;
+
+
+        //    }
+        //    set
+        //    {
+        //        if (value > 0.0)
+        //        {
+        //            width = value;
+        //        }
+        //    }
+
+        //}
+
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+
+        //public override double GetArea()
+        //{
+        //    return Width * Length;
+        //}
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return String.Format("Width = {0}, Length = {1}", Width, Length);
         }
 
     }
+
+    public sealed class RectangleSealed : Polygon
+    {
+
+        // Miembros de la clase aqui
+        //sealed public override double GetArea()
+        //{
+        //    return Width * Length;
+        //}
+    }
+
+    public class Polygon : Object
+    {
+
+        public double Length { get; protected set; }
+        public double Width { get; protected set; }
+
+        public virtual void Draw() {
+
+            Console.WriteLine("Dibijando: Poligono");
+
+        }
+    }
+
 }
