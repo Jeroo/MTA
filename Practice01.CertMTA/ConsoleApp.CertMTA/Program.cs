@@ -74,6 +74,7 @@ namespace ConsoleApp.CertMTA
             //Console.WriteLine("Área del Rectángulo: {0}",area) ;
 
             RectangleHandler handler;
+
             //handler += new RectangleHandler(DisplayArea);
 
             /// handler += DisplayArea; 
