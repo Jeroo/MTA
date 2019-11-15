@@ -1,0 +1,27 @@
+﻿Complete espacios en blanco
+1. Propiedad
+2. Abstract
+3. CompareTo
+4. is
+5. Herencia, Polimorfismo y Encapsulacion
+6. NameSpaces o espacios de nombres
+7. this
+8. delegate o delegado
+9. Estructura o Struct y Clase
+10. static
+
+Opcion multiple
+1. c
+2. b
+3. a
+4. d
+5. a
+6. b
+7. a
+8. b
+9. a
+10. c
+11. a
+12. b
+13. a
+14. c

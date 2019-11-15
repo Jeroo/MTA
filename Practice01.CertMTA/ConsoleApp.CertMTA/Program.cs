@@ -54,28 +54,15 @@ namespace ConsoleApp.CertMTA
     //    }
     //}
 
-    class Rectangle : Polygon
-    {
-        public Rectangle(double length, double width)
-        {
-            Length = length;
-            Width = width;
-        }
 
-        public override double GetArea()
-        {
-            return Length * Width;
-        }
-    }
+    //abstract class Polygon
+    //{
 
-    abstract class Polygon
-    {
+    //    public double Length { get; protected set; }
+    //    public double Width { get; protected set; }
 
-        public double Length { get; protected set; }
-        public double Width { get; protected set; }
-
-        abstract public double GetArea();
-    }
+    //    abstract public double GetArea();
+    //}
 
     public class Program
     {
@@ -171,283 +158,38 @@ namespace ConsoleApp.CertMTA
         static void r_Changed(object sender, EventArgs e) {
 
             Rectangle r = (Rectangle)sender;
-            Console.WriteLine(
-                    "Value Changed : Length = {0}",
-                    r.Length);
+            //Console.WriteLine(
+            //        "Value Changed : Length = {0}",
+            //        r.Length);
 
         }
+
+
         public static void Main(string[] args)
         {
 
-            Rectangle rect = new Rectangle(10,20);
 
-            Console.WriteLine(
-                "Width = {0}, Length = {1}, Area = {2}", rect.Width, rect.Length, rect.GetArea()
-                );
-            //Point p1 = new Point();
-            //p1.X = 10;
-            //p1.Y = 20;
 
-            //Point p2 = p1;
-            //p2.X = 100;
+            //Triangle t = new Triangle();
+            //t.Draw();
 
-            //Console.WriteLine("p1.X = {0}", p1.X);
+            //Polygon po = t;
+            //po.Draw();
 
-            //Rectangle rect1 = new Rectangle
-            //{ Length = 10.0, Width = 20.0 };
 
-            //Rectangle rect2 = rect1;
-            //rect2.Length = 100.0;
+            //Rectangle rect1 = new Rectangle { Length = 10, Width = 20 };
+            //Rectangle rect2 = new Rectangle { Length = 100, Width = 200 };
 
-            //Console.WriteLine("rect1.Length = {0}", rect1.Length);
+            //Console.WriteLine(rect2.CompareTo(rect1));
 
-            //Rectangle rect = new Rectangle
-            //{ Length = 10.0, Width = 20.0 };
+            Product p = new Product { Name = "Plancha"};
 
+            Console.WriteLine(p.Name);
 
-            //Console.WriteLine("Nombre de la forma: {0}, Area: {1}", Rectangle.ShapeName, rect.GetArea());
 
-            //Rectangle r = new Rectangle();
-            //r.Changed += new EventHandler(r_Changed);
-            //r.Length = 10;
-
-
-            //List<int> friendsFrom = new List<int> { 1, 1,2,2,2 };
-            //List<int> friendsTo = new List<int> { 2,2,3,3,4 };
-            //List<int> friendsWeight = new List<int> { 1,2,1,3,3};
-            //int friendsNodes = 4;
-
-            //maxShared(friendsNodes, friendsFrom, friendsTo, friendsWeight);
-
-            //List<string> characterCodes = new List<string>()
-            //{
-            //    "a 100100",
-            //    "b 100101",
-            //    "c 110001",
-            //    "d 100000",
-            //    "[newline] 111111",
-            //    "p 111110",
-            //    "q 000001"
-
-            //};
-
-            //string encoded = "111110000001100100111111100101110001111110";
-
-            //decode(characterCodes, encoded);
-
-
-
-
-
-
-
-
-
-            //List<string> hostnames = new List<string>();
-            //List<string> hostnamesnewFile = new List<string>();
-            //string filename = Console.ReadLine();
-            //string outputfilename = string.Empty;
-            //string outputResult = string.Empty;
-            //StreamReader sr = new StreamReader(filename);
-            //String line;
-            //String AllLline;
-            //int occurrencesHostName = 0;
-            //try
-            //{
-
-            //    AllLline = sr.ReadToEnd();
-
-            //    //close the file
-            //    sr.Close();
-
-            //    StreamReader sr2 = new StreamReader(filename);
-            //    //Read the first line of text
-            //    line = sr2.ReadLine();
-            //    //Continue to read until you reach end of file
-            //    while (line != null)
-            //    {
-            //        string[] splitLine = line.Split('-');
-
-            //        if (!string.IsNullOrEmpty(splitLine[0]))
-            //        {
-            //            string hostname = splitLine[0].Trim();
-
-            //            if (!hostnamesnewFile.Contains(hostname))
-            //            {
-            //                hostnamesnewFile.Add(hostname);
-            //                occurrencesHostName = Regex.Matches(AllLline, splitLine[0].Trim()).Count;
-            //                outputResult = "The host " + hostname + " made " + occurrencesHostName + " requests";
-            //                hostnames.Add(outputResult);
-            //                Console.WriteLine(outputResult);
-
-            //            }
-
-            //        }
-
-            //        //Read the next line
-            //        line = sr2.ReadLine();
-            //    }
-
-            //    //close the file
-            //    sr2.Close();
-
-            //    // WriteAllLines creates a file, writes a collection of strings to the file,
-            //    outputfilename = "records_hosts_access_log_00.txt";
-            //    System.IO.File.WriteAllLines(outputfilename, hostnames);
-
-            //    Console.ReadLine();
-            //}
-            //catch(Exception e)
-            //{
-            //      Console.WriteLine("Exception: " + e.Message);
-            //}
-            // finally 
-            //{
-            //      Console.WriteLine("Executing finally block.");
-            //}
-
-
-
-            //List<string> dates = new List<string> { "1st Dec 1700", "2nd Feb 2013","4th Apr 1900"};
-
-            //reformatDate(dates);
-
-            //string regularExpression = @"^(([a-z]{1,6})[_]?[0-9]{0,4}?)(@hackerrank.com$)";
-
-            //int query = Convert.ToInt32(Console.ReadLine());
-            //var result = Enumerable.Repeat("False", query).ToArray();
-
-            //for (int i = 0; i < query; i++)
-            //{
-            //    string someString = Console.ReadLine();
-
-            //    if (Regex.IsMatch(someString, regularExpression))
-            //    {
-            //        result[i] = "True";
-            //    }
-            //}
-
-            //foreach (var res in result)
-            //{
-            //    Console.WriteLine(res);
-            //}
-
-
-            //List<int> listBit = new List<int>();
-            //List<int> listBitResult = new List<int>();
-
-
-            //int number,i, length, tobase;
-
-            //length = 8;
-            //tobase = 2;
-            //number = 161;
-
-            //string theBinaryString = Convert.ToString(number, tobase).PadLeft(length, '0');
-
-            //int[] binary = new int[length];
-
-            //for (int y = 0; y < length; y++)
-            //{
-            //    binary[y] = int.Parse(theBinaryString[y].ToString());
-
-            //    if (binary[y] == 1)
-            //    {
-            //        listBit.Add(y+1);
-            //    }
-            //}
-
-            //listBitResult.Add(listBit.Count());
-
-            //for (i = 0; i < listBit.Count(); i++)
-            //{
-            //    listBitResult.Add(listBit[i]);
-            //    //Console.Write(listBit[i] + "\n\n");
-            //}
-
-            //for (i = 0; i < listBitResult.Count(); i++)
-            //{
-            //    Console.Write(listBitResult[i] + "\n\n");
-            //}
-
-
-            //    DateTime myDate1 = new DateTime(1970, 1, 9, 0, 0, 00);
-            //    DateTime myDate2 = DateTime.Now;
-            //    TimeSpan myDateResult;
-            //    myDateResult = myDate2 - myDate1;
-            //    Email email = new Email();
-
-            // email.Calculate(myDateResult);
-
-            //IEnumerable<int> oddNums =
-
-            //    Enumerable.Range(20, 20).Where(x => x % 2 != 0);
-
-            //oddNums.ToList()
-            //List<int> arr = new List<int> { 1, 2, 5, 9, 6 };
-            //int k = 5;
-            //string result = findNumber(arr, k);
-            //int index1 = Array.IndexOf(arr.ToArray(), k);
-            //Console.WriteLine(index1);
-
-            //int x = 0;
-            //int y = 0;
-            //int resultInt = 0;
-
-            //x++; // Operadores unarios
-            //++x;// Operadores unarios
-
-            //resultInt = x + y; // Operadores binarios
-
-            //string resultSTR = x > 0 ? "Si": "No" ; //TODO Operador Ternario, solo existe un solo operador ternario en C#
-
-            //Estructuras de decision en C# son: if, if-else y switch
-            //int number1 = 10;
-            //int number2 = 20;
-
-            //if (number2 > number1)
-            //{
-            //    Console.WriteLine("number2 es mayor que number1");
-            //}
-
-            //if (number1 > 5)
-            //{
-            //    Console.WriteLine("number1 es mayor que 5");
-
-            //    if (number1 < 20)
-            //    {
-            //        Console.WriteLine("number1 es menor que 20");
-            //    }
-            //}
-
-            //TestIfElse(10);
-            //TestSwitch(10, 20, '+');
-            //TestSwitchFallThrough();
-            //WhileTest();
-            //DoWhileTest();
-            //ForTest();
-            //ForInifinity();
-            //ForEachTest();
-            //int resulfactorial = Factorial(5);
-            //Console.WriteLine(resulfactorial);
-            //ExceptionTest();
-            // TryCatchFinallyTest();
-            //int n = 20;
-            //int d = n++ + 5;
-            //Console.WriteLine("Rsultado de d = {0}",d);
-
-            //int numberl = 10;
-            //int number2 = 20;
-            //if (number2 > numberl)
-            //    Console.WriteLine("numberl");
-            //Console.WriteLine("number2");
-
-            //Rectangle r = new Rectangle();
-            //r.Changed += new EventHandler(r_Changed);
-            //r.Length = 10;
         }
 
-            RectangleHandler handler;
+        RectangleHandler handler;
 
             //handler += new RectangleHandler(DisplayArea);
         //static void r_Changed(object sender, EventArgs e)
@@ -471,23 +213,23 @@ namespace ConsoleApp.CertMTA
             }
             TryCatchFinallyTest();
 
-            Polygon p = new Rectangle(10, 20);
+            //Polygon p = new Rectangle(10, 20);
 
 
-            object o = new Rectangle(10, 20);
+            //object o = new Rectangle(10, 20);
 
-            if (o is Rectangle)
-            {
+            //if (o is Rectangle)
+            //{
 
-                Rectangle r = (Rectangle)o;
-            }
+            //    Rectangle r = (Rectangle)o;
+            //}
 
-            Rectangle r2 = o as Rectangle;
+            //Rectangle r2 = o as Rectangle;
 
-            if (r2 != null)
-            {
-                // Do Something
-            }
+            //if (r2 != null)
+            //{
+            //    // Do Something
+            //}
 
 
             //List<Polygon> polygons = new List<Polygon>();
@@ -501,18 +243,14 @@ namespace ConsoleApp.CertMTA
             //}
 
 
-            Triangle t = new Triangle();
-            t.Draw();
-
-            Polygon po = t;
-            po.Draw();
+            return "";
 
         }
 
         public delegate void RectangleHandler(Rectangle rect);
 
         public static void DisplayArea(Rectangle rect) {
-            return kExists ? "YES" : "NO";
+            //return kExists ? "YES" : "NO";
 
             //Console.WriteLine(rect.GetArea());
         }
@@ -718,18 +456,41 @@ namespace ConsoleApp.CertMTA
         {
             Console.WriteLine("Dibijando: Triangulo");
         }
+
+        //public override double GetArea()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 
-    public class Rectangle : Polygon
+    public class Rectangle : Polygon, IComparable
     {
-        private double length;
-        private double width;
+        public double Length { get; set; }
+        public double Width { get; set; }
 
 
-        public Rectangle(double length, double width)
+        //public Rectangle(double length, double width)
+        //{
+        //    Length = length;
+        //    Width = width;
+        //}
+
+        public int CompareTo(object obj)
         {
-            Length = length;
-            Width = width;
+            if (obj == null)
+                return 1;
+
+            if (!(obj is Rectangle))
+                throw new ArgumentException();
+
+            Rectangle target = (Rectangle)obj;
+            double diff = this.GetArea() - target.GetArea();
+
+            if (diff == 0)
+                return 0;
+            else if (diff > 0)
+                return 1;
+            else return -1;
         }
 
         public override void Draw()
@@ -737,50 +498,16 @@ namespace ConsoleApp.CertMTA
             Console.WriteLine("Dibijando: Rectangulo");
         }
 
-        //public override double Length {
-        //    get {
-
-        //        return length;
-
-
-        //          }
-        //    set {
-        //        if (value > 0.0)
-        //        {
-        //            length = value;
-        //        }
-        //    }
-
-        //}
-
-        //public double Width
-        //{
-        //    get
-        //    {
-
-        //        return width;
-
-
-        //    }
-        //    set
-        //    {
-        //        if (value > 0.0)
-        //        {
-        //            width = value;
-        //        }
-        //    }
-
-        //}
-
+        
         public override bool Equals(object obj)
         {
             return base.Equals(obj);
         }
 
-        //public override double GetArea()
-        //{
-        //    return Width * Length;
-        //}
+        public double GetArea()
+        {
+            return Width * Length;
+        }
 
         public override int GetHashCode()
         {
@@ -789,7 +516,7 @@ namespace ConsoleApp.CertMTA
 
         public override string ToString()
         {
-            return String.Format("Width = {0}, Length = {1}", Width, Length);
+            return String.Format("Width = {0}, Length = {1}", this.Width, this.Length);
         }
 
     }
@@ -802,13 +529,17 @@ namespace ConsoleApp.CertMTA
         //{
         //    return Width * Length;
         //}
+        //public override double GetArea()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 
     public class Polygon : Object
     {
 
-        public double Length { get; protected set; }
-        public double Width { get; protected set; }
+        public double Length { get; set; }
+        public double Width { get; set; }
 
         public virtual void Draw() {
 

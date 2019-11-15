@@ -1,0 +1,18 @@
+﻿Las interfaces se utilizan para establecer contratos a traves de los cuales los objetos pueden interactuar entre si sin conocer los detalles de implementacion.
+
+Las interfaces se definen utilizando la palabra reservada interface. 
+
+Una definicion de interface consiste en un conjunto de firmas para metodos, propiedades, delegados, eventos o indexadores.
+
+Una definicion de interface no puede consistir de ningun campo de datos o detalles de implementacion como cuerpos de metodos.
+
+Por estandar, todas las interfaces definidas en el .NET Framework empiezan con la letra I mayuscula. Aun cuando puede asignar nombres a sus interfaces de la forma que quiera, es mejor utilizar
+el estandar de Framework.
+
+Una interface es similar a una clase abstracta pero hay diferencias notables. Una clase abstracta proporciona una implementacion incompleta, mientras que una interface no proporciona
+niguna implementacion. Una clase tambien puede implementar multiples interfaces pero esta limitada a heredar de una sola clase base.
+
+Por lo que, como decide si utiliza una clase abstracta o una interface? Una forma de decidir es revisar si existe una relacion "Es un" entre los dos conceptos. Por ejemplo, si existe una
+relacion de herencia entre SalariedEmployee y Employee. entonces puede utilizar una clase abstracta para estandarizar la funcionalidad comun entre clases derivadas.
+
+Por otro lado, no hay una relacion "Es un" entre Employee y la IComparable. Por lo tanto, la funcionalidad de comparacion es mejor si se implementa como una interface.
