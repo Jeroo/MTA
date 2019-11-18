@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
@@ -182,9 +183,43 @@ namespace ConsoleApp.CertMTA
 
             //Console.WriteLine(rect2.CompareTo(rect1));
 
-            Product p = new Product { Name = "Plancha"};
+            //Product p = new Product { Name = "Plancha"};
 
-            Console.WriteLine(p.Name);
+            //Console.WriteLine(p.Name);
+
+            string word = string.Empty;
+
+            Queue queue = new Queue();
+            queue.Enqueue("Hola");
+            queue.Enqueue(1);
+            queue.Enqueue(DateTime.Now);
+
+
+            Stack stack = new Stack();
+            stack.Push("Esto es una Pila (Stack)");
+            stack.Push(DateTime.Now);
+            stack.Push(20.59);
+
+            Console.WriteLine("Cola***************************************************");
+            for (byte i = 0; i < 3; i++)
+            {
+
+                word = queue.Dequeue().ToString();
+
+               
+                Console.WriteLine(word);
+
+            }
+
+            Console.WriteLine("Pila***************************************************");
+            for (byte i = 0; i < 3; i++)
+            {
+               
+                word = stack.Pop().ToString();
+
+                Console.WriteLine(word);
+
+            }
 
 
         }
