@@ -67,7 +67,7 @@ namespace ConsoleApp.CertMTA
 
     public class Program
     {
-        
+
 
         // static string regularExpression = @"^(([a-z]{1,6})[_]?[0-9]{0,4}?)(@hackerrank.com$)";
 
@@ -84,7 +84,7 @@ namespace ConsoleApp.CertMTA
                     dates[i] = "Year out of range Range(1900, 2100)";
                     continue;
                 }
-                
+
                 date[0] = int.Parse(Regex.Match(date[0], @"\d+").Value).ToString("00");
 
                 int month = DateTimeFormatInfo.CurrentInfo.AbbreviatedMonthNames.ToList().IndexOf(date[1]) + 1;
@@ -100,7 +100,7 @@ namespace ConsoleApp.CertMTA
             List<string> listCodes = new List<string>();
             Dictionary<string, string> codesDictionary = new Dictionary<string, string>();
             string result = string.Empty;
-        
+
             int counterTakeElementSixToSix = 6;
             int lengthEncoded = encoded.Length / counterTakeElementSixToSix;
 
@@ -135,12 +135,12 @@ namespace ConsoleApp.CertMTA
             }
 
             maximalValue = (from t in groupfriendsNode
-                           group t by t.Value into g
-                           select new
-                           {
-                               maximal = g.Sum(x => x.Key)
+                            group t by t.Value into g
+                            select new
+                            {
+                                maximal = g.Sum(x => x.Key)
 
-                           }).Sum(x => x.maximal);
+                            }).Sum(x => x.maximal);
 
 
             return maximalValue;
@@ -148,7 +148,7 @@ namespace ConsoleApp.CertMTA
         //Pagina en la que me quede del libro la 34
         //Cambio en otra pc
 
-     
+
 
         public struct Point {
 
@@ -200,13 +200,34 @@ namespace ConsoleApp.CertMTA
             stack.Push(DateTime.Now);
             stack.Push(20.59);
 
+            LinkedList<int> linkedList = new LinkedList<int>();
+            linkedList.AddFirst(1);
+            linkedList.AddLast(2);
+            linkedList.AddLast(3);
+            linkedList.AddLast(5);
+
+            linkedList.AddBefore(linkedList.Find(2), 6);
+
+            Console.WriteLine("Listas Enlazadas***************************************************");
+            foreach (var item in linkedList)
+            {
+                Console.WriteLine(item);
+            }
+
+            linkedList.Remove(2);
+
+            Console.WriteLine("Listas Enlazadas Removed***************************************************");
+            foreach (var item in linkedList)
+            {
+                Console.WriteLine(item);
+            }
             Console.WriteLine("Cola***************************************************");
             for (byte i = 0; i < 3; i++)
             {
 
                 word = queue.Dequeue().ToString();
 
-               
+
                 Console.WriteLine(word);
 
             }
@@ -214,11 +235,26 @@ namespace ConsoleApp.CertMTA
             Console.WriteLine("Pila***************************************************");
             for (byte i = 0; i < 3; i++)
             {
-               
+
                 word = stack.Pop().ToString();
 
                 Console.WriteLine(word);
 
+            }
+
+            //BubbleSort algorithm
+            int[] numbers = new int[] { 20, 30, 10, 40,5 };
+             Console.WriteLine("Desordenados***************************************************");
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                Console.WriteLine(numbers[i]);
+            }
+            numbers =  BubbleSort(numbers);
+
+            Console.WriteLine("Ordenados***************************************************");
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                Console.WriteLine(numbers[i]);
             }
 
 
@@ -226,13 +262,38 @@ namespace ConsoleApp.CertMTA
 
         RectangleHandler handler;
 
-            //handler += new RectangleHandler(DisplayArea);
+        //handler += new RectangleHandler(DisplayArea);
         //static void r_Changed(object sender, EventArgs e)
         //{
         //    Rectangle r = (Rectangle)sender;
         //    Console.WriteLine(
         //     "Value Changed : Length = (0}", r.Length);
         //}
+
+        public static int[] BubbleSort(int[] numbers) {
+
+
+            bool swapped;
+
+            do
+            {
+                swapped = false;
+                for (int i = 0; i < numbers.Length - 1; i++)
+                {
+                    if (numbers[i] > numbers[i + 1])
+                    {
+                        //swap
+                        int temp = numbers[i + 1];
+                        numbers[i + 1] = numbers[i];
+                        numbers[i] = temp;
+                        swapped = true;
+                    }
+                }
+            } while (swapped == true);
+
+
+            return numbers;
+        }
 
         public static string findNumber(List<int> arr, int k)
         {
