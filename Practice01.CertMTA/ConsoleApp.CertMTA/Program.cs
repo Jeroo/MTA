@@ -244,19 +244,61 @@ namespace ConsoleApp.CertMTA
 
             //BubbleSort algorithm
             int[] numbers = new int[] { 20, 30, 10, 40,5 };
-             Console.WriteLine("Desordenados***************************************************");
+            // Console.WriteLine("Desordenados***************************************************");
+            //for (int i = 0; i < numbers.Length; i++)
+            //{
+            //    Console.WriteLine(numbers[i]);
+            //}
+            //numbers =  BubbleSort(numbers);
+
+            //Console.WriteLine("Ordenados***************************************************");
+            //for (int i = 0; i < numbers.Length; i++)
+            //{
+            //    Console.WriteLine(numbers[i]);
+            //}
+
+            numbers = QuickSort(numbers,0, numbers.Length - 1);
+
+            Console.WriteLine("QuickSort***************************************************");
             for (int i = 0; i < numbers.Length; i++)
             {
                 Console.WriteLine(numbers[i]);
             }
-            numbers =  BubbleSort(numbers);
 
-            Console.WriteLine("Ordenados***************************************************");
-            for (int i = 0; i < numbers.Length; i++)
+            int[,] array = new int[4,5]; //mxn donde m = fila y n = columna
+            array[0, 0] = 10;
+            array[0, 1] = 20;
+            array[0, 2] = 5;
+            array[0, 3] = 8;
+            array[0, 4] = 4;
+
+            array[1, 0] = 2;
+            array[1, 1] = 15;
+            array[1, 2] = 25;
+            array[1, 3] = 22;
+            array[1, 4] = 23;
+
+            array[2, 0] = 30;
+            array[2, 1] = 2011;
+            array[2, 2] = 150;
+            array[2, 3] = 210;
+            array[2, 4] = 65;
+
+            array[3, 0] = 60;
+            array[3, 1] = 51;
+            array[3, 2] = 300;
+            array[3, 3] = 95;
+            array[3, 4] = 103;
+
+            int[] result = GetMaxRowElement(array);
+
+            for (int i = 0; i <= result.Count(); i++)
             {
-                Console.WriteLine(numbers[i]);
-            }
+                Console.WriteLine($"Fila: {i+1} elemento de mayor valor: {result[i]} \n");
 
+
+            }
+           
 
         }
 
@@ -291,6 +333,92 @@ namespace ConsoleApp.CertMTA
                 }
             } while (swapped == true);
 
+
+            return numbers;
+        }
+
+        public static int Partition(int[] numbers, int left, int right, int pivotIndex)
+        {
+            int pivotValue = numbers[pivotIndex];
+
+            //Se mueve el elemento pivote al final
+            int temp = numbers[right];
+            numbers[right] = numbers[pivotIndex];
+            numbers[pivotIndex] = temp;
+
+            //newPivot almacena el indice del primer numero
+            //mayor que el pivote
+            int newPivot = left;
+            for (int i = left; i < right; i++)
+            {
+                if (numbers[i] <= pivotValue)
+                {
+                    //Intercambiamos
+                    temp = numbers[newPivot];
+                    numbers[newPivot] = numbers[i];
+                    numbers[i] = temp;
+                    newPivot++;
+                }
+            }
+
+            //Mueve el elemento pivote a su posicion // almacenada
+            temp = numbers[right];
+            numbers[right] = numbers[newPivot];
+            numbers[newPivot] = temp;
+
+
+            return newPivot;
+        }
+
+        public static int[] GetMaxRowElement(int[,] array)
+        {
+            int[] maxElementPerRow = new int[array.GetLength(0)];
+
+            for (int i = 0; i <= array.GetLength(0) - 1; i++)
+            {
+                for (int j = 0; j < array.GetLength(1) - 1; j++)
+                {
+                    if (array[i,j] > array[i, j+1])
+                    {
+                        //Swap
+                        int temp = array[i, j + 1];
+                        array[i, j + 1] = array[i, j];
+                        array[i, j] = temp;
+                    }
+                }
+            }
+
+            int arraylasIndex = array.GetLength(1) - 1;
+
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                int t = array[i, arraylasIndex];
+
+                maxElementPerRow[i] = array[i, arraylasIndex];               
+
+            }
+
+
+            return maxElementPerRow;
+
+        }
+
+        public static int[] QuickSort(int[] numbers, int left, int right)
+        {
+            //Caso base de la recursion
+            if (right > left)
+            {
+                int pivotIndex = left + (right - left) / 2;
+
+                //Particiona el vector
+                pivotIndex = Partition(numbers, left, right, pivotIndex);
+              
+                //Ordena la particion izquierda
+                QuickSort(numbers, left, pivotIndex - 1);
+                
+                //Ordena la parte derecha
+                QuickSort(numbers, pivotIndex + 1, right);
+            }
 
             return numbers;
         }
