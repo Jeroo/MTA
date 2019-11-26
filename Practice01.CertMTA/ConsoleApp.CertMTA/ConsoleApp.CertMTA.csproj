@@ -96,6 +96,7 @@
     <Content Include="Notas\Exam 1.txt" />
     <Content Include="Notas\Interfaces.txt" />
     <Content Include="Notas\Polimorfismo.txt" />
+    <Content Include="Styles.css" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
