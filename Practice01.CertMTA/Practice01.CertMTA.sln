@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextWebServiceClient", "Tex
 		{C2FB1368-99AE-4392-8E17-212B740EF403} = {C2FB1368-99AE-4392-8E17-212B740EF403}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsDesign", "WindowsFormsDesign\WindowsFormsDesign.csproj", "{EA42D30F-204F-496B-ACA7-B7FD945FB43D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{37AE8169-2485-4171-9646-0445129A84EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37AE8169-2485-4171-9646-0445129A84EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37AE8169-2485-4171-9646-0445129A84EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA42D30F-204F-496B-ACA7-B7FD945FB43D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA42D30F-204F-496B-ACA7-B7FD945FB43D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA42D30F-204F-496B-ACA7-B7FD945FB43D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA42D30F-204F-496B-ACA7-B7FD945FB43D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
